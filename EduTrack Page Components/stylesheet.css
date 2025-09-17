@@ -1,0 +1,384 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #CCCCFF;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 2410px;
+  height: 1080px;
+  position: relative;
+  background-color: #CCCCFF;
+}
+
+/* Header */
+.header {
+  position: absolute;
+  top: 24px;
+  left: 84px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 77.45px;
+  color: #000000;
+  width: 435px;
+  height: 145px;
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  width: 160px;
+  height: 64px;
+  background-color: #4949B8;
+  border: none;
+  border-radius: 47.5px;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29.05px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-btn:hover {
+  background-color: #3838a0;
+}
+
+/* Main Content */
+.main-content {
+  position: absolute;
+  top: 172px;
+  left: 84px;
+  right: 84px;
+  height: 615px;
+  display: flex;
+  gap: 126px;
+  justify-content: space-between;
+}
+
+/* Left Section */
+.left-section {
+  width: 443px;
+}
+
+.date-info {
+  position: absolute;
+  top: 98px;
+  left: 0;
+  width: 288px;
+  height: 68px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38.73px;
+  color: #000000;
+}
+
+.date-info p:first-child {
+  margin-bottom: 4px;
+}
+
+.attendance-card {
+  position: relative;
+  top: 263px;
+  left: 0;
+  width: 443px;
+  height: 352px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+}
+
+.card-header {
+  width: 100%;
+  height: 66px;
+  background-color: #4949B8;
+  border-radius: 20px 20px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-header h2 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29.05px;
+  color: #FFFFFF;
+}
+
+.card-content {
+  padding: 26px 30px;
+}
+
+.attendance-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.attendance-row.inactive {
+  opacity: 0.5;
+}
+
+.day {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29.05px;
+  color: #000000;
+}
+
+.attendance-count {
+  width: 45px;
+  height: 30px;
+  background-color: #4949B8;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24.2px;
+  color: #FFFFFF;
+}
+
+.attendance-row.inactive .attendance-count {
+  opacity: 0.5;
+}
+
+/* Video Section */
+.video-section {
+  width: 615px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-container{
+  width: 615px;
+  height: 615px;
+  background-color: #000000;
+  border-radius: 79px;
+  box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  object-fit: fill;
+}
+.camera-off-icon {
+  width: 109px;
+  height: 109px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+#camera{
+    z-index: 1;
+    width: 615px;
+    height: 615px;
+    border-radius: 79px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  object-fit: cover;
+}
+.camera-off-icon img {
+  width: 99.92px;
+  height: 99.92px;
+}
+
+.video-controls {
+  position: absolute;
+  top: 673px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.camera-btn {
+  width: 189px;
+  height: 95px;
+  background-color: #4949B8;
+  border: none;
+  border-radius: 47.5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-btn:hover {
+  background-color: #3838a0;
+}
+
+.camera-btn img {
+  width: 44px;
+  height: 44px;
+}
+
+.camera-message {
+  position: absolute;
+  top: 826px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 347px;
+  height: 66px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29.05px;
+  text-align: center;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Attendees Section */
+.attendees-section {
+  width: 443px;
+}
+
+.attendees-card {
+  width: 443px;
+  height: 615px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  position: relative;
+}
+
+.student-list {
+  padding: 32px 29px 0 29px;
+  height: 483px;
+  overflow-y: auto;
+}
+
+.student-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 18px;
+}
+
+.student-row.offline {
+  opacity: 0.5;
+}
+
+.student-name {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29.05px;
+  color: #000000;
+}
+
+.status-indicator {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.status-indicator.online {
+  background-color: #00FF48;
+}
+
+.status-indicator.offline {
+  background-color: #FF0000;
+}
+
+.scrollbar {
+  position: absolute;
+  right: 6px;
+  top: 71px;
+  width: 6px;
+  height: 188px;
+  background-color: #D9D9D9;
+}
+
+.attendance-summary {
+  position: absolute;
+  bottom: -80px;
+  left: 34px;
+  right: 34px;
+  height: 66px;
+  background-color: #FFFFFF;
+  border-radius: 47.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29.05px;
+  color: #000000;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 64px;
+  right: 116px;
+}
+
+.finish-btn {
+  width: 160px;
+  height: 64px;
+  background-color: #4949B8;
+  border: none;
+  border-radius: 47.5px;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29.05px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finish-btn:hover {
+  background-color: #3838a0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1920px) {
+  .container {
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
+}
+
+@media (max-width: 1536px) {
+  .container {
+    transform: scale(0.6);
+    transform-origin: top left;
+  }
+}
+
+@media (max-width: 1152px) {
+  .container {
+    transform: scale(0.5);
+    transform-origin: top left;
+  }
+}

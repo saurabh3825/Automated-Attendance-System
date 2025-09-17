@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTrack - Attendance Interface</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="EduTrack Page Components/stylesheet.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="header">
+      <h1 class="logo">EduTrack</h1>
+      <button class="login-btn">Login</button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Left Section -->
+      <section class="left-section">
+        <div class="date-info">
+          <p id="time"></p>
+          <p id="date"></p>
+          <script src="EduTrack Page Components/Date.js"></script>
+        </div>
+
+        <!-- Weekly Attendance -->
+        <div class="attendance-card">
+          <div class="card-header">
+            <h2>Attendance this week</h2>
+          </div>
+          <div class="card-content">
+            <div class="attendance-row">
+              <span class="day">Monday</span>
+              <div class="attendance-count">45</div>
+            </div>
+            <div class="attendance-row">
+              <span class="day">Tuesday</span>
+              <div class="attendance-count">39</div>
+            </div>
+            <div class="attendance-row">
+              <span class="day">Wednesday</span>
+              <div class="attendance-count">41</div>
+            </div>
+            <div class="attendance-row inactive">
+              <span class="day">Thursday</span>
+              <div class="attendance-count">0</div>
+            </div>
+            <div class="attendance-row inactive">
+              <span class="day">Friday</span>
+              <div class="attendance-count">0</div>
+            </div>
+            <div class="attendance-row inactive">
+              <span class="day">Saturday</span>
+              <div class="attendance-count">0</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Center Section - Video Area -->
+      <section class="video-section">
+        <div class="video-container">
+          <video id="camera" autoplay playsinline muted style="transform: scaleX(-1)"></video>
+
+  <script src="EduTrack Page Components/videopreview.js"></script>
+          <div class="camera-off-icon">
+            <svg width="109" height="109" viewBox="0 0 109 109" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Camera Off" role="img">
+              <path d="M4.54169 4.54166L104.458 104.458M95.375 95.375H13.625C11.216 95.375 8.90559 94.418 7.20213 92.7145C5.49868 91.0111 4.54169 88.7007 4.54169 86.2917V36.3333C4.54169 33.9243 5.49868 31.6139 7.20213 29.9104C8.90559 28.207 11.216 27.25 13.625 27.25H27.25M40.875 13.625H68.125L77.2084 27.25H95.375C97.7841 27.25 100.094 28.207 101.798 29.9104C103.501 31.6139 104.458 33.9243 104.458 36.3333V78.7525M69.3967 69.3967C67.8893 71.5996 65.915 73.4433 63.6142 74.7966C61.3134 76.1499 58.7427 76.9795 56.0848 77.2265C53.427 77.4734 50.7474 77.1317 48.2366 76.2255C45.7259 75.3193 43.4456 73.871 41.5582 71.9835C39.6707 70.096 38.2224 67.8158 37.3162 65.3051C36.41 62.7943 36.0682 60.1147 36.3152 57.4569C36.5622 54.799 37.3918 52.2283 38.7451 49.9275C40.0984 47.6267 41.9421 45.6524 44.145 44.145" 
+              stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            
+          </div>
+        </div>
+        <div class="video-controls">
+          <button class="camera-btn">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Camera" role="img">
+  <path d="M46 38C46 39.0609 45.5786 40.0783 44.8284 40.8284C44.0783 41.5786 43.0609 42 42 42H6C4.93913 42 3.92172 41.5786 3.17157 40.8284C2.42143 40.0783 2 39.0609 2 38V16C2 14.9391 2.42143 13.9217 3.17157 13.1716C3.92172 12.4214 4.93913 12 6 12H14L18 6H30L34 12H42C43.0609 12 44.0783 12.4214 44.8284 13.1716C45.5786 13.9217 46 14.9391 46 16V38Z" 
+    stroke="#F3F3F3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 34C28.4183 34 32 30.4183 32 26C32 21.5817 28.4183 18 24 18C19.5817 18 16 21.5817 16 26C16 30.4183 19.5817 34 24 34Z" 
+    stroke="#F3F3F3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+          </button>
+        </div>
+        <p class="camera-message">Please keep your Camera on</p>
+      </section>
+
+      <!-- Right Section - Attendees -->
+      <section class="attendees-section">
+        <div class="attendees-card">
+          <div class="card-header">
+            <h2>Attendees</h2>
+          </div>
+          <div class="card-content">
+            <!-- <div class="scrollbar"></div> -->
+            <div class="student-list">
+              <div class="student-row">
+                <span class="student-name">Student 1</span>
+                <div class="status-indicator online"></div>
+              </div>
+              <div class="student-row">
+                <span class="student-name">Student 3</span>
+                <div class="status-indicator online"></div>
+              </div>
+              <div class="student-row">
+                <span class="student-name">Student 45</span>
+                <div class="status-indicator online"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 2</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 4</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 5</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 6</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 7</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 8</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 9</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 10</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 11</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 12</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 13</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 14</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 15</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 16</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 17</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 18</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 19</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 20</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 21</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 22</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 23</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 24</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 25</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 26</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 27</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 28</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 29</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 30</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 31</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 32</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 33</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 34</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 35</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 36</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 37</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 38</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 39</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 40</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 41</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 42</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 43</span>
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="student-row offline">
+                <span class="student-name">Student 44</span>
+                <div class="status-indicator offline"></div>
+              </div>
+            </div>
+          </div>
+          <div class="attendance-summary">
+            <span>No. of Students present: 3</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <button class="finish-btn">Finish</button>
+    </footer>
+  </div>
+
+  <script src="EduTrack Page Components/script.js"></script>
+</body>
+</html>
