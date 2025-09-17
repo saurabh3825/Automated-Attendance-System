@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
       scrollDirection = 1;
     }
     
-    // studentList.scrollTop += scrollDirection * 0.5;
+    studentList.scrollTop += scrollDirection * 0.5;
   }, 50);
 });
+
